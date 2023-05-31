@@ -7,11 +7,17 @@ import keyboard
 player = Player()
 game = Game()
 
-print("Press 'Enter' to start a new game...")
+game.title_screen()
+
+print()
+print("Press 'Enter' to start a new game...".center(200))
 while True:
     if keyboard.is_pressed('enter'):
         break
 
+winsound.PlaySound(None, winsound.SND_PURGE)
+game.loading_screen()
+game.intro()
 game.start()
 game.play()
 

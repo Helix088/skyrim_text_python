@@ -14,29 +14,37 @@ class Game:
         self.player = Player()
 
     def title_screen(self):
-        print("This contains sound, please adjust your headset accordingly".center(90))
         os.system("CLS")
-        winsound.PlaySound("8-bit-skyrim.wav",
-                           winsound.SND_ASYNC | winsound.SND_LOOP)
-        print("Bethesda Softworks".center(72))
+        print("Music about to start, please turn down volume to accommodate".center(120))
+        time.sleep(4.5)
         os.system("CLS")
-        print("The Elder Scrolls V: Skyrim".center(76))
+        winsound.PlaySound("8-bit-skyrim.wav", winsound.SND_ASYNC | winsound.SND_LOOP)
+        print("Bethesda Softworks".center(120))
+        time.sleep(3.5)
         os.system("CLS")
-        print("Text Edition".center(67))
-        os.system("CLS")
-        print("Music By: Joe Jeremiah".center(74))
+        print("The Elder Scrolls V: Skyrim".center(120))
+        time.sleep(3.5)
+        print("Text Edition".center(120))
+        time.sleep(3.5)
+        print("Music By: Joe Jeremiah".center(120))
+        time.sleep(3.5)
 
     def loading_screen(self):
-        print("Helpful Tip: Did you know that if you need to breath, you should inhale.".center(100))
-        print("Loading...".center(67))
+        os.system("CLS")
+        print("Helpful Tip: Did you know that if you need to breath, you should inhale.".center(120))
+        print("Loading...".center(120))
+        time.sleep(5)
         os.system("CLS")
 
     def intro(self):
-        print("Bethesda Softworks".center(72))
+        print("Bethesda Softworks".center(120))
+        time.sleep(3.5)
         os.system("CLS")
-        print("The Elder Scrolls V".center(73))
+        print("The Elder Scrolls V".center(120))
+        time.sleep(3.5)
         os.system("CLS")
-        print("Skyrim: Text Edition".center(74))
+        print("Skyrim: Text Edition".center(120))
+        time.sleep(3.5)
         os.system("CLS")
 
     def start(self):
@@ -66,9 +74,9 @@ class Game:
     def menu(self):
         choice = ''
         print("Menu:")
-        print("0. Resume")
-        print("1. Inventory")
-        print("2. Controls")
+        print("Type '0'. Resume")
+        print("Type '1'. Inventory")
+        print("Type '2'. Controls")
         while choice != '0':
             choice = input()
             print()
