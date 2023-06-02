@@ -6,12 +6,14 @@ import dialogue
 import player
 from dialogue import Dialogue
 from player import Player
+from enemies import Enemy
 
 
 class Game:
     def __init__(self):
         self.dialogue = Dialogue()
         self.player = Player()
+        self.enemies = Enemy()
 
     def title_screen(self):
         os.system("CLS")
@@ -70,6 +72,34 @@ class Game:
         print("Press the SHIFT key to open your inventory.")
         print("Press the ESC key to leave the game.")
         print()
+
+    def enemy_appears(self):
+        print("An enemy appears!")
+        self.enemies.add_enemy()
+        self.enemies.display_enemy_info()
+
+
+    def enter_room(self):
+        print("You see a door!")
+        enter_door = input("Will you open it? (Type Y or N)")
+        if (enter_door == "Y" or "y"):
+            print("You enter the room.")
+            time(3)
+            os.system("CLS")
+            self.loading_screen()
+        else:
+            print("You do not enter the room.")
+    
+    def exit_room(self):
+        print("You return to the door")
+        exit_door = input("Would you like to exit? (Type Y or N)")
+        if (exit_door == "Y" or 'y'):
+            print("You exit the room.")
+            time(3)
+            os.system("CLS")
+            self.loading_screen()
+        else:
+            print("You do not exit the room.")
 
     def menu(self):
         choice = ''

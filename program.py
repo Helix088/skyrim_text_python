@@ -1,3 +1,4 @@
+from tkinter import Canvas
 from game import Game
 from player import Player
 import winsound
@@ -30,6 +31,8 @@ rightPressed = False
 aPressed = False
 bPressed = False
 spacePressed = False
+cv = Canvas()
+count = 0
 
 while not escapePressed:
     if keyboard.is_pressed('esc'):
@@ -39,6 +42,9 @@ while not escapePressed:
             upPressed = True
             game.walk_forward()
             time.sleep(0.2)
+            count +=1
+            if(count > 3):
+                game.enemy_appears()
     else:
         upPressed = False
     if keyboard.is_pressed('down'):
@@ -90,5 +96,6 @@ while not escapePressed:
             time.sleep(0.2)
     else:
         bButtonPressed = False
+    
 
 winsound.PlaySound(None, winsound.SND_PURGE)
