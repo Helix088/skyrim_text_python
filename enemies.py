@@ -1,13 +1,6 @@
-# import urllib.request
+import randomname
 import random
 from inventory import Inventory
-
-# word_url = "http://svnweb.freebsd.org/csrg/share/dict/words?view=co&content-type=text/plain"
-# response = urllib.request.urlopen(word_url)
-# long_txt = response.read().decode()
-# words = long_txt.splitlines()
-# upper_words = [word for word in words if word[0].isupper()]
-# name_words = [word for word in upper_words if not word.isupper()]
 
 races = [
     "Wood Elf", "High Elf", "Dark Elf", "Orc", "Redguard",
@@ -22,7 +15,11 @@ class Enemy:
         self.enemyGender = ""
         self.enemyRace = ""
         self.enemyAge = 0
+        self.enemyLevel = 0
         self.enemyGold = 0
+        self.enemyHealth = 0
+        self.enemyStamina = 0
+        self.enemyMagicka = 0
         self.inv = Inventory
 
     def add_enemy(self):
@@ -30,54 +27,78 @@ class Enemy:
         self.set_enemy_gender()
         self.set_enemy_race()
         self.set_enemy_age()
+        self.set_enemy_level()
         self.add_enemy_inventory()
+        self.set_enemy_health()
+        self.set_enemy_stamina()
+        self.set_enemy_magicka()
 
     def display_enemy_info(self):
         print("Name:", self.get_enemy_name())
         print("Gender:", self.get_enemy_gender())
         print("Race:", self.get_enemy_race())
         print("Age:", self.get_enemy_age())
-        self.inv.display_enemy_inventory()
+        print("Health:", self.get_enemy_health())
+        print("Stamina:", self.get_enemy_stamina())
+        print("Magicka:", self.get_enemy_magicka())
+        self.inv.display_inventory()
         print()
 
-    def add_inventory(self):
+    def add_enemy_inventory(self):
         self.inv = Inventory()
         self.inv.get_inventory()
         return self.inv
 
-    # def rand_name():
-    #     rand_name = ' '.join(
-    #         [name_words[random.randint(0, len(name_words)-1)] for i in range(2)])
-    #     return rand_name
+    def set_enemy_name(self) -> str:
+        self.enemyName = randomname.get_name()
 
-    def set_name(self):
-        # for n in range(10):
-        #     self.enemyName = self.rand_name()
-        self.enemyName = "Bob"
-
-    def get_name(self) -> str:
+    def get_enemy_name(self) -> str:
         return self.enemyName
 
-    def set_race(self):
+    def set_enemy_race(self) -> str:
         self.enemyRace = random.choice(races)
 
-    def get_race(self) -> str:
+    def get_enemy_race(self) -> str:
         return self.enemyRace
 
-    def set_gender(self):
+    def set_enemy_gender(self) -> str:
         self.enemyGender = random.choice(gender)
 
-    def get_gender(self) -> str:
+    def get_enemy_gender(self) -> str:
         return self.enemyGender
 
-    def set_age(self):
+    def set_enemy_age(self) -> int:
         self.enemyAge = random.randint(18, 1000)
 
-    def get_age(self) -> int:
+    def get_enemy_age(self) -> int:
         return self.enemyAge
+    
+    def set_enemy_level(self) -> int:
+        self.enemyLevel = 0
 
-    def set_gold(self) -> int:
+    def get_enemy_level(self) -> int:
+        return self.enemyLevel
+    
+    def set_enemy_health(self) -> int:
+        self.enemyHealth = 100
+    
+    def get_enemy_health(self) -> int:
+        return self.enemyHealth
+    
+    def set_enemy_stamina(self) -> int:
+        self.enemyStamina = 100
+
+    def get_enemy_stamina(self) -> int:
+        return self.enemyStamina
+    
+    def set_enemy_magicka(self) -> int:
+        self.enemyMagicka = 100
+
+    def get_enemy_magicka(self) -> int:
+        return self.enemyMagicka
+
+    def set_enemy_gold(self) -> int:
         self.enemyGold = random.randint(10, 500)
 
-    def get_gold(self) -> int:
+    def get_enemy_gold(self) -> int:
         return self.enemyGold

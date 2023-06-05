@@ -7,6 +7,11 @@ class Player:
         self.playerRace = ""
         self.playerAge = 0
         self.playerGold = 0
+        self.playerLevel = 0
+        self.playerXp = 0
+        self.playerHealth = 0
+        self.playerStamina = 0
+        self.playerMagicka = 0
         self.inv = Inventory
 
     def menu(self):
@@ -17,6 +22,11 @@ class Player:
         self.set_gender()
         self.set_race()
         self.set_age()
+        self.set_level()
+        self.set_xp()
+        self.set_health()
+        self.set_stamina()
+        self.set_magicka()
         print()
         self.add_inventory()
 
@@ -25,12 +35,17 @@ class Player:
         print("Gender:", self.get_gender())
         print("Race:", self.get_race())
         print("Age:", self.get_age())
+        print("Level:", self.get_level())
+        print("Health: ", self.get_)
+        print("Stamina: ", self.get_)
+        print("Magicka: ", self.get_)
         self.inv.display_inventory()
         print()
 
     def display_player_inventory(self):
-        print("Name:", self.get_name())
-        print("Gold:", self.get_gold())
+        print("Name: ", self.get_name())
+        print("Level: ", self.get_level())
+        print("Gold: ", self.get_gold())
         self.inv.display_inventory()
 
     def add_inventory(self):
@@ -79,6 +94,36 @@ class Player:
 
     def get_age(self) -> int:
         return self.playerAge
+    
+    def set_level(self) -> int:
+        self.playerLevel = 0
+
+    def get_level(self) -> int:
+        return self.playerLevel
+    
+    def set_xp(self) -> int:
+        self.playerXp = 0
+
+    def get_xp(self) -> int:
+        return self.playerXp
+    
+    def set_health(self) -> int:
+        self.playerHealth = 100
+
+    def get_health(self) -> int:
+        return self.playerHealth
+
+    def set_stamina(self) -> int:
+        self.playerStamina = 100
+
+    def get_stamina(self) -> int:
+        self.playerStamina
+
+    def set_magicka(self) -> int:
+        self.playerMagicka = 100
+
+    def get_magicka(self) -> int:
+        self.playerMagicka
 
     def get_gold(self) -> int:
         return self.playerGold

@@ -8,7 +8,7 @@ import keyboard
 player = Player()
 game = Game()
 
-game.title_screen()
+# game.title_screen()
 
 print()
 print("Press 'Enter' to start a new game...".center(200))
@@ -17,8 +17,8 @@ while True:
         break
 
 winsound.PlaySound(None, winsound.SND_PURGE)
-game.loading_screen()
-game.intro()
+# game.loading_screen()
+# game.intro()
 game.start()
 game.play()
 

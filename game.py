@@ -50,7 +50,7 @@ class Game:
         os.system("CLS")
 
     def start(self):
-        # self.dialogue.opening_scene()
+        self.dialogue.opening_scene()
         print("Once you press 'Enter' the dialogue will disappear.")
         print("Press 'Enter' to continue...")
         while True:
@@ -78,6 +78,19 @@ class Game:
         self.enemies.add_enemy()
         self.enemies.display_enemy_info()
 
+    def enemy_killed(self):
+        if(self.enemies.enemyHealth == 0):
+            print("Enemy has been killed!")
+            xp = self.player.set_xp()
+            xp += 20
+        return xp
+
+    def level_up(self):
+        if(self.player.playerXp == (self.player.playerLevel * 100)):
+            print("Level up time!")
+            level = self.player.set_level()
+            level += 1
+        return level
 
     def enter_room(self):
         print("You see a door!")
