@@ -36,9 +36,9 @@ class Player:
         print("Race:", self.get_race())
         print("Age:", self.get_age())
         print("Level:", self.get_level())
-        print("Health: ", self.get_)
-        print("Stamina: ", self.get_)
-        print("Magicka: ", self.get_)
+        print("Health: ", self.get_health())
+        print("Stamina: ", self.get_stamina())
+        print("Magicka: ", self.get_magicka())
         self.inv.display_inventory()
         print()
 

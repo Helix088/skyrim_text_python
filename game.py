@@ -8,28 +8,11 @@ from dialogue import Dialogue
 from player import Player
 from enemies import Enemy
 
-
 class Game:
     def __init__(self):
         self.dialogue = Dialogue()
         self.player = Player()
         self.enemies = Enemy()
-
-    def title_screen(self):
-        os.system("CLS")
-        print("Music about to start, please turn down volume to accommodate".center(120))
-        time.sleep(4.5)
-        os.system("CLS")
-        winsound.PlaySound("8-bit-skyrim.wav", winsound.SND_ASYNC | winsound.SND_LOOP)
-        print("Bethesda Softworks".center(120))
-        time.sleep(3.5)
-        os.system("CLS")
-        print("The Elder Scrolls V: Skyrim".center(120))
-        time.sleep(3.5)
-        print("Text Edition".center(120))
-        time.sleep(3.5)
-        print("Music By: Joe Jeremiah".center(120))
-        time.sleep(3.5)
 
     def loading_screen(self):
         os.system("CLS")
