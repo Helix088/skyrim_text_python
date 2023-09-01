@@ -98,15 +98,19 @@ class Game:
 
     def loading_screen(self):
         os.system("CLS")
-        print("Helpful Tip: Did you know that if you need to breath, you should inhale.".center(120))
-        print("Loading...".center(120))
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Helpful Tip: Did you know that if you need to breath, you should inhale.")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Loading...")
         time.sleep(5)
         os.system("CLS")
 
     def start(self):
         self.dialogue.opening_scene()
-        print("Once you press 'Enter' the dialogue will disappear.")
-        print("Press 'Enter' to continue...")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Once you press 'Enter' the dialogue will disappear.")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Press 'Enter' to continue...")
         while True:
             if msvcrt.getch() == b'\r':
                 break
@@ -115,98 +119,99 @@ class Game:
         self.player.display_info()
 
     def play(self):
-        print("What would you like to do?")
-        print("Press the UP ARROW key to walk.")
-        print("Press the DOWN ARROW key to walk.")
-        print("Press the LEFT ARROW key to walk.")
-        print("Press the RIGHT ARROW key to walk.")
-        print("Press the SPACEBAR to jump.")
-        print("Press the LEFT MOUSE button to swing your weapon.")
-        print("Press the RIGHT MOUSE button to block with your weapon.")
-        print("Press the SHIFT key to open your inventory.")
-        print("Press the ESC key to leave the game.")
-        print()
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="What would you like to do?")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Press the UP ARROW key to walk.")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Press the DOWN ARROW key to walk.")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Press the LEFT ARROW key to walk.")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Press the RIGHT ARROW key to walk.")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Press the SPACEBAR to jump.")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Press the LEFT MOUSE button to swing your weapon.")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Press the RIGHT MOUSE button to block with your weapon.")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Press the SHIFT key to open your inventory.")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Press the ESC key to leave the game.")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="")
         
 
     def enemy_appears(self):
-        print("An enemy appears!")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="An enemy appears!")
         self.enemies.add_enemy()
         self.enemies.display_enemy_info()
 
     def enemy_killed(self):
         if(self.enemies.enemyHealth == 0):
-            print("Enemy has been killed!")
+            uielement = UIElement(center_position=(
+                600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Enemy has been killed!")
             xp = self.player.set_xp()
             xp += 20
         return xp
 
     def level_up(self):
         if(self.player.playerXp == (self.player.playerLevel * 100)):
-            print("Level up!")
+            uielement = UIElement(center_position=(
+                600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Level up!")
             level = self.player.set_level()
             level += 1
         return level
 
     def enter_room(self):
-        print("You see a door!")
-        enter_door = input("Will you open it? (Type Y or N)")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="You see a door!")
+        enter_door = input(uielement=UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Will you open it? (Type Y or N)"))
         if (enter_door == "Y" or "y"):
-            print("You enter the room.")
+            uielement = UIElement(center_position=(
+                600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="You enter the room.")
             time(3)
             os.system("CLS")
             self.loading_screen()
         else:
-            print("You do not enter the room.")
+            uielement = UIElement(center_position=(
+                600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="You do not enter the room.")
     
     def exit_room(self):
-        print("You return to the door")
-        exit_door = input("Would you like to exit? (Type Y or N)")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="You return to the door")
+        exit_door = input(uielement=UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Would you like to exit? (Type Y or N)"))
         if (exit_door == "Y" or 'y'):
-            print("You exit the room.")
+            uielement = UIElement(center_position=(
+                600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="You exit the room.")
             time(3)
             os.system("CLS")
             self.loading_screen()
         else:
-            print("You do not exit the room.")
+            uielement = UIElement(center_position=(
+                600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="You do not exit the room.")
 
     def menu(self):
         choice = ''
-        print("Menu:")
-        print("Type '0'. Resume")
-        print("Type '1'. Inventory")
-        print("Type '2'. Controls")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Menu:")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Type '0'. Resume")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Type '1'. Inventory")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Type '2'. Controls")
         while choice != '0':
             choice = input()
-            print()
+            uielement = UIElement(center_position=(
+                600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="")
             if choice == '1':
                 self.player.display_player_inventory()
             elif choice == '2':
                 self.play()
 
-    def walk_forward(self):
-        print("You walk forwards.")
-        print()
-
-    def walk_backward(self):
-        print("You walk backwards.")
-        print()
-
-    def walk_left(self):
-        print("You walk left.")
-        print()
-
-    def walk_right(self):
-        print("You walk right.")
-        print()
-
-    def swing(self):
-        print("You swing your weapon!")
-        print()
-
-    def block(self):
-        print("You block with your weapon!")
-        print()
-
-    def jump(self):
-        print("You jump!")
-        print()
+    

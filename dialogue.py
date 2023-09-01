@@ -127,6 +127,8 @@ class Dialogue:
         # time.sleep(2)
         # print("Captain: Anyone else feel like running?")
         # time.sleep(2)
-        print("Hadvar: Wait. You there. Step forward. Who are you?")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="Hadvar: Wait. You there. Step forward. Who are you?")
         time.sleep(2)
-        print("[You walk forward and are now able to create you character]")
+        uielement = UIElement(center_position=(
+            600, 800), font_size=30, bg_rgb=BLACK, text_rgb=WHITE, text="[You walk forward and are now able to create you character]")
